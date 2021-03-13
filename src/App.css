@@ -1,0 +1,63 @@
+h1 {
+  text-align: center;
+  font-size: 25px;
+  margin: 30px 0 0 0;
+}
+
+form {
+  max-width: 400px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 40px;
+  border: 1px solid #eee;
+}
+
+input,
+label,
+textarea {
+  display: block;
+  margin: 10px 0;
+}
+
+input,
+textarea {
+  width: calc(100% - 20px);
+  border: 1px solid #ddd;
+  margin-bottom: 40px;
+}
+
+input,
+textarea,
+button {
+  padding: 10px;
+}
+
+button {
+  font-weight: bold;
+}
+
+input .form-unsubmitted form {
+  display: block;
+}
+
+.form-submitted input,
+.form-submitted label,
+.form-submitted button,
+.form-submitted textarea {
+  display: none;
+}
+
+.form-submitted form {
+  background-color: green;
+}
+
+.form-submitted form::after {
+  content: "You did it";
+  text-align: center;
+  display: block;
+  font-weight: bold;
+}
+
+.form-error form {
+  background-color: red;
+}

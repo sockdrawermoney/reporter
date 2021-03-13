@@ -61,3 +61,26 @@ input .form-unsubmitted form {
 .form-error form {
   background-color: red;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: #ccc;
+  }
+  input, textarea {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #777;
+  }
+  form {
+    border: 1px solid #777;
+  }
+  a:link, a:visited {
+    color: #fff;
+  }
+  button {
+    background-color: black;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+}

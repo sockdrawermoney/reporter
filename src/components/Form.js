@@ -5,9 +5,6 @@ import createIssue from "../functions/createIssue";
 import { Widgets } from "./widgets";
 
 const Form = () => {
-  console.log(config);
-  console.log('repo', config.repo);
-  console.log('fields', config.fields);
   const [state, setState] = useState({
     title: "",
     body: "",

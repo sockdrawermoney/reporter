@@ -40,8 +40,6 @@ const Widget = (props) => {
     "select": selectFieldWidget
   };
   
-  console.log(name, 'widget', widgets[widget])
-  
   return widgets[widget];
 }
 

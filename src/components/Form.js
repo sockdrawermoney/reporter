@@ -1,12 +1,8 @@
 import React, { useState } from "react";
+import config from '../config.json';
 import history from "../utils/history";
 import createIssue from "../functions/createIssue";
-import TextField from "./TextField";
-import TextArea from "./TextArea";
-import config from '../config.json';
-// import SelectField from "./components/SelectField";
-const repo = process.env.REACT_APP_GITHUB_REPO;
-// const configFile = yaml.load(yamlConfig);
+import { TextField, TextArea, SelectField } from "./widgets";
 
 const Form = () => {
   console.log(config);
@@ -17,6 +13,14 @@ const Form = () => {
     body: "",
     status: "unsubmitted",
   });
+  
+  const fields = config.fields;
+  
+  const widgets = {
+    "text": TextField,
+    "textarea": TextArea,
+    "select": SelectField
+  }
 
   const handleChange = (e) => {
     const { target } = e;
@@ -53,7 +57,7 @@ const Form = () => {
   return (
     <div className={"form-" + state.status}>
       <h1>
-        New <a href={"https://github.com/" + repo}>{repo}</a>{" "}
+        New <a href={"https://github.com/" + config.repo}>{config.repo}</a>{" "}
         issue
       </h1>
       <form>

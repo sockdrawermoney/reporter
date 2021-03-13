@@ -6,14 +6,12 @@ It's mostly intended to be used as a reference for doing more interesting things
 
 ### Dev configuration
 
-See `.env.example`
-
-1. Set [GitHub token](https://github.com/settings/tokens) in .env
-2. Set desired repo in .env (e.g. `adamavenir/issuemaker`)
+1. Set [GitHub token](https://github.com/settings/tokens) in .env (see `.env.example`)
+2. Set desired repo in src/config.json (e.g. `adamavenir/issuemaker`)
+3. Configure form fields in src/config.json
 
 ### Production configuration
 
 Add Netlify deploy variables:
 
 - `REACT_APP_GITHUB_TOKEN`
-- `REACT_APP_GITHUB_REPO`

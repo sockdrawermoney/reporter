@@ -1,8 +1,9 @@
 import github from "octonode";
-import config from "../_config/github";
+const token = process.env.REACT_APP_GITHUB_TOKEN;
+const repo = process.env.REACT_APP_GITHUB_REPO;
 
-const client = github.client(config.token);
-const ghrepo = client.repo(config.repo);
+const client = github.client(token);
+const ghrepo = client.repo(repo);
 
 const createIssue = async (formData) => {
   const { title, body } = formData;

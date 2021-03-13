@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import history from "./_utils/history";
-import config from "./_config/github";
 import createIssue from "./functions/createIssue";
 import TextField from "./components/TextField";
 import TextArea from "./components/TextArea";
 // import SelectField from "./components/SelectField";
+const token = process.env.REACT_APP_GITHUB_TOKEN;
+const repo = process.env.REACT_APP_GITHUB_REPO;
 
 const Form = () => {
   const [state, setState] = useState({
@@ -48,7 +49,7 @@ const Form = () => {
   return (
     <div className={"form-" + state.status}>
       <h1>
-        New <a href={"https://github.com/" + config.repo}>{config.repo}</a>{" "}
+        New <a href={"https://github.com/" + repo}>{repo}</a>{" "}
         issue
       </h1>
       <form>

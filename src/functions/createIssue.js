@@ -12,7 +12,7 @@ const createIssue = async (formData) => {
     const result = await ghrepo.issueAsync({
       title: title,
       body: body,
-      // labels: [labels],
+      labels: labels,
     });
     console.log("result", result);
     return result;

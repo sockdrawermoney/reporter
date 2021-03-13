@@ -4,7 +4,6 @@ import createIssue from "./functions/createIssue";
 import TextField from "./components/TextField";
 import TextArea from "./components/TextArea";
 // import SelectField from "./components/SelectField";
-const token = process.env.REACT_APP_GITHUB_TOKEN;
 const repo = process.env.REACT_APP_GITHUB_REPO;
 
 const Form = () => {

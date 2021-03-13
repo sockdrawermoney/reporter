@@ -9,6 +9,9 @@ const repo = process.env.REACT_APP_GITHUB_REPO;
 // const configFile = yaml.load(yamlConfig);
 
 const Form = () => {
+  console.log(config);
+  console.log('repo', config.repo);
+  console.log('fields', config.fields);
   const [state, setState] = useState({
     title: "",
     body: "",
@@ -27,9 +30,6 @@ const Form = () => {
     title: state.title,
     body: state.body,
   };
-  
-  console.log('yamlconfig', yamlConfig);
-  console.log('config', config);
 
   const handleSubmit = () => {
     createIssue(formData).then((result) => {

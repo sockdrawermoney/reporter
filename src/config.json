@@ -1,9 +1,6 @@
-[ 
-  { 
-    "repo": "adamavenir/issuemaker" 
-  },
-  {
-     "fields": [
+{ 
+    "repo": "adamavenir/issuemaker",
+    "fields": [
         {
            "name": "title",
            "label": "Title",
@@ -43,4 +40,3 @@
         }
      ]
   }
-]

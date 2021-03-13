@@ -25,7 +25,7 @@ const Form = () => {
   
   let markdownBody = [];
   
-  const markdown = Object.keys(bodyFields).forEach(key => {
+  Object.keys(bodyFields).forEach(key => {
     const fieldOpts = find(fields, { 'name': key});
     const input = bodyFields[key];
     markdownBody.push(`### ${fieldOpts.label}\n\n${input}\n\n`);

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import config from '../config.json';
 import history from "../utils/history";
 import createIssue from "../functions/createIssue";
-import { TextField, TextArea, SelectField } from "./widgets";
+import { Widgets } from "./widgets";
 
 const Form = () => {
   console.log(config);
@@ -16,12 +16,6 @@ const Form = () => {
   
   const fields = config.fields;
   
-  const widgets = {
-    "text": TextField,
-    "textarea": TextArea,
-    "select": SelectField
-  }
-
   const handleChange = (e) => {
     const { target } = e;
     setState({
@@ -61,20 +55,7 @@ const Form = () => {
         issue
       </h1>
       <form>
-        <TextField
-          name="title"
-          label="Title"
-          value={state.title}
-          onChange={handleChange}
-          required
-        />
-        <TextArea
-          name="body"
-          label="Body"
-          onChange={handleChange}
-          value={state.body}
-          required
-        />
+        <Widgets fields={fields} onChange={handleChange} />
         <button type="button" onClick={handleSubmit}>
           Create issue
         </button>

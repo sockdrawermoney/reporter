@@ -10,8 +10,8 @@ const SelectField = (props) => {
       {label}
       <select name={name} onChange={handleChange} value={value}>
         <option value="">— Select —</option>
-        {options.map((option) => (
-          <option key={option} value={option}>
+        {options.map((option, index) => (
+          <option key={'option-' + index} value={option}>
             {option}
           </option>
         ))}

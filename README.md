@@ -15,3 +15,13 @@ It's mostly intended to be used as a reference for doing more interesting things
 Add Netlify deploy variables:
 
 - `REACT_APP_GITHUB_TOKEN`
+
+### Configuration
+
+You _must_ pick one field to be named `title`, which will become the issue's title.
+
+To _can_ set a `labelAll` to be applied to all submitted issues.
+
+You can _also_ pick an additional field to be named `label` in order to predefine a set of option labels as select options or to allow an open-ended label field. (The latter seems a little nuts, but hey, you do you.)
+
+The rest of the fields will get added to the body. Each subsection of the body will start with a markdown header h2 that will use the label of that field.

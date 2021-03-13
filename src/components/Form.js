@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { omit, find } from "lodash";
 import config from '../config.json';
 import history from "../utils/history";
 import createIssue from "../functions/createIssue";
@@ -6,8 +7,6 @@ import { Widgets } from "./widgets";
 
 const Form = () => {
   const [state, setState] = useState({
-    title: "",
-    body: "",
     status: "unsubmitted",
   });
   
@@ -20,10 +19,27 @@ const Form = () => {
       [target.name]: target.value,
     });
   };
+  
+  // body contains everything in state except title, label, and status
+  const bodyFields = omit(state, "title", "status", "label");
+  
+  let markdownBody = [];
+  
+  const markdown = Object.keys(bodyFields).forEach(key => {
+    const fieldOpts = find(fields, { 'name': key});
+    const input = bodyFields[key];
+    markdownBody.push(`### ${fieldOpts.label}\n\n${input}\n\n`);
+  })
+  
+  const labelSet = [
+    config.labelAll ? config.labelAll : '',
+    state.label ? state.label : ''
+  ]
 
   const formData = {
     title: state.title,
-    body: state.body,
+    body: markdownBody.join('\n'),
+    labels: labelSet
   };
 
   const handleSubmit = () => {

@@ -1,17 +1,18 @@
 import github from "octonode";
+import config from "../config.json";
 const token = process.env.REACT_APP_GITHUB_TOKEN;
-const repo = process.env.REACT_APP_GITHUB_REPO;
+const repo = config.repo;
 
 const client = github.client(token);
 const ghrepo = client.repo(repo);
 
 const createIssue = async (formData) => {
-  const { title, body } = formData;
+  const { title, body, labels } = formData;
   try {
     const result = await ghrepo.issueAsync({
       title: title,
       body: body,
-      labels: ["Finding"],
+      // labels: [labels],
     });
     console.log("result", result);
     return result;

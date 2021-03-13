@@ -1,5 +1,6 @@
 { 
     "repo": "adamavenir/issuemaker",
+    "labelAll": "bugs",
     "fields": [
         {
            "name": "title",
@@ -9,22 +10,22 @@
            "required": true
         },
         {
-           "name": "risk",
+           "name": "label",
            "label": "Risk",
            "widget": "select",
            "required": true,
            "options": [
               {
                  "label": "1 — Low Risk",
-                 "value": 1
+                 "value": "1 (Low Risk)"
               },
               {
                  "label": "2 — Medium Risk",
-                 "value": 2
+                 "value": "2 (Med Risk)"
               },
               {
                  "label": "3 — High Risk",
-                 "value": 3
+                 "value": "3 (High Risk)"
               }
            ]
         },

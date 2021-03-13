@@ -1,0 +1,46 @@
+[ 
+  { 
+    "repo": "adamavenir/issuemaker" 
+  },
+  {
+     "fields": [
+        {
+           "name": "title",
+           "label": "Title",
+           "helptext": "Here, let me help you.",
+           "widget": "text",
+           "required": true
+        },
+        {
+           "name": "risk",
+           "label": "Risk",
+           "widget": "select",
+           "required": true,
+           "options": [
+              {
+                 "label": "1 — Low Risk",
+                 "value": 1
+              },
+              {
+                 "label": "2 — Medium Risk",
+                 "value": 2
+              },
+              {
+                 "label": "3 — High Risk",
+                 "value": 3
+              }
+           ]
+        },
+        {
+           "name": "cheese",
+           "label": "Do you like cheese?",
+           "widget": "checkbox"
+        },
+        {
+           "name": "details",
+           "label": "Details",
+           "widget": "textArea"
+        }
+     ]
+  }
+]

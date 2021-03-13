@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import history from "./_utils/history";
-import createIssue from "./functions/createIssue";
-import TextField from "./components/TextField";
-import TextArea from "./components/TextArea";
+import history from "../utils/history";
+import createIssue from "../functions/createIssue";
+import TextField from "./TextField";
+import TextArea from "./TextArea";
+import config from '../config.json';
 // import SelectField from "./components/SelectField";
 const repo = process.env.REACT_APP_GITHUB_REPO;
+// const configFile = yaml.load(yamlConfig);
 
 const Form = () => {
   const [state, setState] = useState({
@@ -25,6 +27,9 @@ const Form = () => {
     title: state.title,
     body: state.body,
   };
+  
+  console.log('yamlconfig', yamlConfig);
+  console.log('config', config);
 
   const handleSubmit = () => {
     createIssue(formData).then((result) => {

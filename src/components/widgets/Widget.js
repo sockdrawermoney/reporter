@@ -25,22 +25,20 @@ const Widget = (props) => {
     onChange={handleChange}
   />);
   
-  // const selectFieldWidget = (<SelectField
-  //   name={name}
-  //   label={label}
-  //   value={value}
-  //   required={required}
-  //   onChange={handleChange}
-  //   options={options}
-  // />);
+  const selectFieldWidget = (<SelectField
+    name={name}
+    label={label}
+    value={value}
+    required={required}
+    onChange={handleChange}
+    options={options}
+  />);
   
   const widgets = {
     "text": textFieldWidget,
     "textarea": textAreaWidget,
-    // "select": selectFieldWidget
+    "select": selectFieldWidget
   };
-  
-  // const ThisWidget = widgets[field.widget];
   
   console.log(name, 'widget', widgets[widget])
   

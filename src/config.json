@@ -31,7 +31,18 @@
         {
            "name": "cheese",
            "label": "Do you like cheese?",
-           "widget": "text"
+           "widget": "select",
+           "required": true,
+            "options": [
+               {
+                  "label": "Yes",
+                  "value": "Yes"
+               },
+               {
+                 "label": "Hell yes",
+                 "value": "Hell yes"
+              }
+            ]
         },
         {
            "name": "details",

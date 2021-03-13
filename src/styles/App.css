@@ -12,9 +12,15 @@ form {
   border: 1px solid #eee;
 }
 
+fieldset {
+  outline: 0px;
+  border: 0px;
+}
+
 input,
 label,
-textarea {
+textarea,
+select {
   display: block;
   margin: 10px 0;
 }
@@ -26,13 +32,27 @@ textarea {
   margin-bottom: 40px;
 }
 
+select {
+  width: 100%;
+  border: 1px solid #ddd;
+  margin-bottom: 40px;
+}
+
+textarea {
+  height: 150px;
+}
+
 input,
 textarea,
-button {
+button,
+select {
   padding: 10px;
 }
 
 button {
+  display: block;
+  width: 200px;
+  margin: 10px auto;
   font-weight: bold;
 }
 

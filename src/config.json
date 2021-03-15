@@ -3,23 +3,9 @@
   "labelAll": "bugs",
   "fields": [
     {
-      "name": "handle",
-      "label": "Handle",
-      "helptext": "Handle you're competing under (individual or team name)",
-      "widget": "text",
-      "required": true
-    },
-    {
-      "name": "address",
-      "label": "Eth address",
-      "helptext": "Address where your prize should go to (and retroactive token reward should c4 be tokenized later)",
-      "widget": "text",
-      "required": true
-    },
-    {
       "name": "title",
-      "label": "Title",
-      "helptext": "Summarize your findings for the bug or vulnerability. (This will be the issue title.)",
+      "label": "Summarize your problem in a few words",
+      "helptext": "(This will be the title of the issue.)",
       "widget": "text",
       "required": true
     },
@@ -40,47 +26,35 @@
         {
           "label": "3 — High Risk",
           "value": "3 (High Risk)"
-        },
-        {
-          "label": "4 — Critical Risk",
-          "value": "4 (Critical Risk)"
         }
       ]
     },
     {
       "name": "details",
-      "label": "Vulnerability details",
-      "helptext": "Detailed description of this particular bug/vulnerability.",
+      "label": "Juicy details",
+      "helptext": "Tell us more about this thing you're describing.",
       "widget": "textarea",
       "required": true
     },
     {
-      "name": "impact",
-      "label": "Impact",
-      "helptext": "Detailed description of the impact this bug/vulnerability has on the overall system under test.",
-      "widget": "textarea",
-      "required": true
-    },
-    {
-      "name": "proof-of-concept",
-      "label": "Proof of concept",
-      "helptext": "Screenshots, logs, or any other relevant proof illustrating the concept of the bug/vulnerability.",
-      "widget": "textarea",
-      "required": true
-    },
-    {
-      "name": "tools",
-      "label": "Tools used",
-      "helptext": "Tools used throughout your testing and analysis process.",
-      "widget": "textarea",
-      "required": true
-    },
-    {
-      "name": "mitigation",
-      "label": "Recommended mitigation steps",
-      "helptext": "Recommended steps that a project should use to mitigate the bug/vulnerability.",
-      "widget": "textarea",
-      "required": true
+      "name": "cheese",
+      "label": "Do you like cheese?",
+      "widget": "select",
+      "required": true,
+      "options": [
+        {
+          "label": "Yes",
+          "value": "Yes"
+        },
+        {
+          "label": "Hell yes",
+          "value": "Yes (enthusiastically)"
+        },
+        {
+          "label": "I am a cheese",
+          "value": "User is a cheese"
+        }
+      ]
     }
   ]
 }

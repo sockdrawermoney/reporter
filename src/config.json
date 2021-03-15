@@ -1,54 +1,86 @@
-{ 
-    "repo": "adamavenir/issuemaker",
-    "labelAll": "bugs",
-    "fields": [
+{
+  "repo": "adamavenir/issuemaker",
+  "labelAll": "bugs",
+  "fields": [
+    {
+      "name": "handle",
+      "label": "Handle",
+      "helptext": "Handle you're competing under (individual or team name)",
+      "widget": "text",
+      "required": true
+    },
+    {
+      "name": "address",
+      "label": "Eth address",
+      "helptext": "Address where your prize should go to (and retroactive token reward should c4 be tokenized later)",
+      "widget": "text",
+      "required": true
+    },
+    {
+      "name": "title",
+      "label": "Title",
+      "helptext": "Summarize your findings for the bug or vulnerability. (This will be the issue title.)",
+      "widget": "text",
+      "required": true
+    },
+    {
+      "name": "label",
+      "label": "Risk rating",
+      "widget": "select",
+      "required": true,
+      "options": [
         {
-           "name": "title",
-           "label": "Title",
-           "helptext": "Here, let me help you.",
-           "widget": "text",
-           "required": true
+          "label": "1 — Low Risk",
+          "value": "1 (Low Risk)"
         },
         {
-           "name": "label",
-           "label": "Risk",
-           "widget": "select",
-           "required": true,
-           "options": [
-              {
-                 "label": "1 — Low Risk",
-                 "value": "1 (Low Risk)"
-              },
-              {
-                 "label": "2 — Medium Risk",
-                 "value": "2 (Med Risk)"
-              },
-              {
-                 "label": "3 — High Risk",
-                 "value": "3 (High Risk)"
-              }
-           ]
+          "label": "2 — Medium Risk",
+          "value": "2 (Med Risk)"
         },
         {
-           "name": "cheese",
-           "label": "Do you like cheese?",
-           "widget": "select",
-           "required": true,
-            "options": [
-               {
-                  "label": "Yes",
-                  "value": "Yes"
-               },
-               {
-                 "label": "Hell yes",
-                 "value": "Hell yes"
-              }
-            ]
+          "label": "3 — High Risk",
+          "value": "3 (High Risk)"
         },
         {
-           "name": "details",
-           "label": "Details",
-           "widget": "textarea"
+          "label": "4 — Critical Risk",
+          "value": "4 (Critical Risk)"
         }
-     ]
-  }
+      ]
+    },
+    {
+      "name": "details",
+      "label": "Vulnerability details",
+      "helptext": "Detailed description of this particular bug/vulnerability.",
+      "widget": "textarea",
+      "required": true
+    },
+    {
+      "name": "impact",
+      "label": "Impact",
+      "helptext": "Detailed description of the impact this bug/vulnerability has on the overall system under test.",
+      "widget": "textarea",
+      "required": true
+    },
+    {
+      "name": "proof-of-concept",
+      "label": "Proof of concept",
+      "helptext": "Screenshots, logs, or any other relevant proof illustrating the concept of the bug/vulnerability.",
+      "widget": "textarea",
+      "required": true
+    },
+    {
+      "name": "tools",
+      "label": "Tools used",
+      "helptext": "Tools used throughout your testing and analysis process.",
+      "widget": "textarea",
+      "required": true
+    },
+    {
+      "name": "mitigation",
+      "label": "Recommended mitigation steps",
+      "helptext": "Recommended steps that a project should use to mitigate the bug/vulnerability.",
+      "widget": "textarea",
+      "required": true
+    }
+  ]
+}

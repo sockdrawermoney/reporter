@@ -5,7 +5,7 @@ h1 {
 }
 
 form {
-  max-width: 400px;
+  max-width: 700px;
   width: 100%;
   margin: 40px auto;
   padding: 40px;
@@ -23,6 +23,15 @@ textarea,
 select {
   display: block;
   margin: 10px 0;
+}
+
+label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.helptext {
+  font-size: 13px;
 }
 
 input,
@@ -63,7 +72,8 @@ input .form-unsubmitted form {
 .form-submitted input,
 .form-submitted label,
 .form-submitted button,
-.form-submitted textarea {
+.form-submitted textarea,
+.form-submitted .helptext {
   display: none;
 }
 
@@ -87,7 +97,8 @@ input .form-unsubmitted form {
     background-color: black;
     color: #ccc;
   }
-  input, textarea {
+  input,
+  textarea {
     background-color: #333;
     color: #fff;
     border: 1px solid #777;
@@ -95,7 +106,8 @@ input .form-unsubmitted form {
   form {
     border: 1px solid #777;
   }
-  a:link, a:visited {
+  a:link,
+  a:visited {
     color: #fff;
   }
   button {

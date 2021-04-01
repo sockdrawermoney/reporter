@@ -42,10 +42,6 @@
         {
           "label": "3 — High Risk",
           "value": "3 (High Risk)"
-        },
-        {
-          "label": "4 — Critical Risk",
-          "value": "4 (Critical Risk)"
         }
       ]
     },

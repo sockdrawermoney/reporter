@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { omit, find } from "lodash";
-import config from "../config.json";
+import config from "../../config.json";
+import formConfig from "../formConfig.json";
 import history from "../utils/history";
 import createIssue from "../functions/createIssue";
 import { Widgets } from "./widgets";
@@ -10,7 +11,7 @@ const Form = () => {
     status: "unsubmitted",
   });
 
-  const fields = config.fields;
+  const fields = formConfig.fields;
 
   const handleChange = (e) => {
     const { target } = e;
@@ -32,11 +33,14 @@ const Form = () => {
   });
 
   const labelSet = [
-    config.labelAll ? config.labelAll : "",
+    formConfig.labelAll ? formConfig.labelAll : "",
     state.label ? state.label : "",
   ];
 
   const formData = {
+    contest: state.contest,
+    handle: state.handle,
+    risk: state.risk,
     title: state.title,
     body: markdownBody.join("\n"),
     labels: labelSet,
@@ -63,11 +67,14 @@ const Form = () => {
 
   return (
     <div className={"form-" + state.status}>
-      <h1>
-        New <a href={"https://github.com/" + config.repo}>{config.repo}</a>{" "}
-        issue
-      </h1>
+      <h1>New finding</h1>
       <form>
+        <input
+          type="hidden"
+          id="contest"
+          name="contest"
+          value={config.contest}
+        />
         <Widgets fields={fields} onChange={handleChange} />
         <button type="button" onClick={handleSubmit}>
           Create issue

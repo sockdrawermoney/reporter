@@ -1,6 +1,5 @@
 {
-  "repo": "adamavenir/issuemaker",
-  "labelAll": "bugs",
+  "labelAll": "",
   "fields": [
     {
       "name": "handle",

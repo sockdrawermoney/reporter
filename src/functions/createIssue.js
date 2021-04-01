@@ -24,8 +24,12 @@ const createIssue = async (formData) => {
 
     const issueId = issueResult.data.number;
     const issueUrl = issueResult.data.html_url;
+
+    sendIssueCopy(title, body, config.sponsor, email);
+
     const message = `${handle} issue #${issueId}`;
-    const path = `data/${handle}-${issueId}.json`;
+    // add /data here
+    const path = `${handle}-${issueId}.json`;
 
     const fileData = {
       contest,
@@ -50,8 +54,6 @@ const createIssue = async (formData) => {
         content,
       }
     );
-
-    sendIssueCopy(title, body, config.sponsor, email);
 
     return {
       file: fileResult,

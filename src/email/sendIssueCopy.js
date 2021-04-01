@@ -3,15 +3,15 @@ import sendEmail from "../functions/send-mail";
 
 const sendIssueCopy = (title, body, recipient) => {
   const text = dedent`
-  Order details:
+  C4 finding submitted:
 
   ${body}
   `;
 
   sendEmail({
-    from: "PERSON <email@email.com>",
+    from: "submissions@code423n4.com",
     to: { recipient },
-    subject: `{title}`,
+    subject: `C4 finding: {title}`,
     text,
   });
 };

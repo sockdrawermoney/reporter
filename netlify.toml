@@ -7,10 +7,10 @@
   # the build. This is relative to the base directory if one has been set, or the
   # root directory if a base has not been set. This sample publishes the
   # directory located at the absolute path "root/project/build-output"
-  publish = "build/"
+  publish = "build"
 
   # Directory with the serverless Lambda functions to deploy to AWS.
-  functions = "src/_functions/"
+  functions = "src/_functions"
 
 # The following redirect is intended for use with most SPAs that handle
 # routing internally.

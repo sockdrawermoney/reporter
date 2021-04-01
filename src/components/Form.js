@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { omit, find } from "lodash";
-import config from "../../config.json";
-import formConfig from "../formConfig.json";
+import config from "../config.json";
 import history from "../utils/history";
 import createIssue from "../functions/createIssue";
 import { Widgets } from "./widgets";
@@ -11,7 +10,7 @@ const Form = () => {
     status: "unsubmitted",
   });
 
-  const fields = formConfig.fields;
+  const fields = config.fields;
 
   const handleChange = (e) => {
     const { target } = e;
@@ -33,7 +32,7 @@ const Form = () => {
   });
 
   const labelSet = [
-    formConfig.labelAll ? formConfig.labelAll : "",
+    config.labelAll ? config.labelAll : "",
     state.label ? state.label : "",
   ];
 

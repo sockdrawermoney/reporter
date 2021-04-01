@@ -1,4 +1,7 @@
 {
+  "contest": 3,
+  "owner": "code-423n4",
+  "repo": "reporter",
   "labelAll": "",
   "fields": [
     {

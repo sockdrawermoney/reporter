@@ -1,5 +1,5 @@
 import { Octokit } from "@octokit/core";
-import config from "../../config.json";
+import config from "../config.json";
 
 const token = process.env.REACT_APP_GITHUB_TOKEN;
 const octokit = new Octokit({ auth: token });

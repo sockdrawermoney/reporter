@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { omit, find } from "lodash";
-import config from '../config.json';
+import config from "../config.json";
 import history from "../utils/history";
 import createIssue from "../functions/createIssue";
 import { Widgets } from "./widgets";
@@ -9,9 +9,9 @@ const Form = () => {
   const [state, setState] = useState({
     status: "unsubmitted",
   });
-  
+
   const fields = config.fields;
-  
+
   const handleChange = (e) => {
     const { target } = e;
     setState({
@@ -19,27 +19,30 @@ const Form = () => {
       [target.name]: target.value,
     });
   };
-  
+
   // body contains everything in state except title, label, and status
   const bodyFields = omit(state, "title", "status", "label");
-  
+
   let markdownBody = [];
-  
-  Object.keys(bodyFields).forEach(key => {
-    const fieldOpts = find(fields, { 'name': key});
+
+  Object.keys(bodyFields).forEach((key) => {
+    const fieldOpts = find(fields, { name: key });
     const input = bodyFields[key];
-    markdownBody.push(`### ${fieldOpts.label}\n\n${input}\n\n`);
-  })
-  
+    markdownBody.push(`# ${fieldOpts.label}\n\n${input}\n\n`);
+  });
+
   const labelSet = [
-    config.labelAll ? config.labelAll : '',
-    state.label ? state.label : ''
-  ]
+    config.labelAll ? config.labelAll : "",
+    state.label ? state.label : "",
+  ];
 
   const formData = {
+    contest: state.contest,
+    handle: state.handle,
+    risk: state.risk,
     title: state.title,
-    body: markdownBody.join('\n'),
-    labels: labelSet
+    body: markdownBody.join("\n"),
+    labels: labelSet,
   };
 
   const handleSubmit = () => {
@@ -63,11 +66,14 @@ const Form = () => {
 
   return (
     <div className={"form-" + state.status}>
-      <h1>
-        New <a href={"https://github.com/" + config.repo}>{config.repo}</a>{" "}
-        issue
-      </h1>
+      <h1>New finding</h1>
       <form>
+        <input
+          type="hidden"
+          id="contest"
+          name="contest"
+          value={config.contest}
+        />
         <Widgets fields={fields} onChange={handleChange} />
         <button type="button" onClick={handleSubmit}>
           Create issue

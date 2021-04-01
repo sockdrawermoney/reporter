@@ -1,13 +1,11 @@
-# ⚠️ issuemaker
+# ⚠️ reporter
 
 Serverless React app for submitting **templatized GitHub issues** to a configured public or private repo.
-
-It's mostly intended to be used as a reference for doing more interesting things with the GitHub API in a way that's easily deployable to Netlify. (Uses lambda functions.)
 
 ### Dev configuration
 
 1. Set [GitHub token](https://github.com/settings/tokens) in .env (see `.env.example`)
-2. Set desired repo in src/config.json (e.g. `adamavenir/issuemaker`)
+2. Set desired repo in src/config.json (e.g. `code-423n4/reporter`)
 3. Configure form fields in src/config.json
 
 ### Production configuration

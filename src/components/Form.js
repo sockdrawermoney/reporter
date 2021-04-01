@@ -37,7 +37,9 @@ const Form = () => {
   ];
 
   const formData = {
-    contest: state.contest,
+    contest: config.contest,
+    sponsor: config.sponsor,
+    email: state.email,
     handle: state.handle,
     risk: state.risk,
     title: state.title,
@@ -66,7 +68,10 @@ const Form = () => {
 
   return (
     <div className={"form-" + state.status}>
-      <h1>New finding</h1>
+      <a href="https://code423n4.com">
+        <img src="/logo.png" className="logo" width="60" alt="C4" />
+      </a>
+      <h1>{config.sponsor} contest finding</h1>
       <form>
         <input
           type="hidden"

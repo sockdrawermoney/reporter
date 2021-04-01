@@ -1,9 +1,17 @@
 {
   "contest": 3,
+  "sponsor": "MarginSwap",
   "owner": "code-423n4",
   "repo": "reporter",
   "labelAll": "",
   "fields": [
+    {
+      "name": "email",
+      "label": "Email address",
+      "helptext": "Used to send a copy of this form for your records",
+      "widget": "text",
+      "required": true
+    },
     {
       "name": "handle",
       "label": "Handle",
@@ -14,7 +22,7 @@
     {
       "name": "address",
       "label": "Eth address",
-      "helptext": "Address where your prize should go to (and retroactive token reward should c4 be tokenized later)",
+      "helptext": "Address where your prize should go to (and retroactive token reward should C4 be tokenized later)",
       "widget": "text",
       "required": true
     },

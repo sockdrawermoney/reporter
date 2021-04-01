@@ -1,6 +1,30 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code,
+textarea {
+  font-family: "Space Mono", monospace;
+}
+
+.logo {
+  display: block;
+  margin: 50px auto 10px auto;
+  width: 60px;
+}
+
+label {
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  /* text-transform: uppercase; */
+}
+
 h1 {
   text-align: center;
-  font-size: 25px;
+  font-size: 35px;
   margin: 30px 0 0 0;
 }
 
@@ -104,7 +128,7 @@ input .form-unsubmitted form {
     border: 1px solid #777;
   }
   form {
-    border: 1px solid #777;
+    border: 1px solid #443658;
   }
   a:link,
   a:visited {

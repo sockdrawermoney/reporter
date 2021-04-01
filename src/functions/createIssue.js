@@ -1,12 +1,13 @@
 import { Octokit } from "@octokit/core";
 import config from "../config.json";
+import sendIssueCopy from "./sendIssueCopy";
 
 const token = process.env.REACT_APP_GITHUB_TOKEN;
 const octokit = new Octokit({ auth: token });
 const { owner, repo } = config;
 
 const createIssue = async (formData) => {
-  const { contest, handle, risk, title, body, labels } = formData;
+  const { contest, email, handle, risk, title, body, labels } = formData;
 
   try {
     const issueResult = await octokit.request(
@@ -49,6 +50,8 @@ const createIssue = async (formData) => {
         content,
       }
     );
+
+    sendIssueCopy(title, body, config.sponsor, email);
 
     return {
       file: fileResult,

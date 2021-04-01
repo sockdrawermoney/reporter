@@ -2,7 +2,9 @@ import dedent from "dedent";
 import sendEmail from "./sendEmail";
 
 const sendIssueCopy = (title, body, sponsor, recipient) => {
-  const recipients = `${recipient}, submissions@code423n4.com`;
+  // TODO change recipient
+  const recipients = `${recipient}, adamavenir@hey.com`;
+  // const recipients = `${recipient}, submissions@code423n4.com`;
   const text = dedent`
   C4 finding submitted:
 

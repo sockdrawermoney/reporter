@@ -20,7 +20,6 @@ const createIssue = async (formData) => {
         labels,
       }
     );
-    console.log("issueResult", issueResult);
 
     const issueId = issueResult.data.number;
     const issueUrl = issueResult.data.html_url;
@@ -29,7 +28,7 @@ const createIssue = async (formData) => {
 
     const message = `${handle} issue #${issueId}`;
     // add /data here
-    const path = `${handle}-${issueId}.json`;
+    const path = `data/${handle}-${issueId}.json`;
 
     const fileData = {
       contest,
@@ -55,9 +54,11 @@ const createIssue = async (formData) => {
       }
     );
 
+    console.log(issueResult, "issueResult", fileResult, "fileResult");
+
     return {
-      file: fileResult,
-      issue: issueResult,
+      fileResult,
+      issueResult,
     };
   } catch (error) {
     console.log("error", error);

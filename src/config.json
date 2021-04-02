@@ -2,7 +2,7 @@
   "contest": 3,
   "sponsor": "MarginSwap",
   "owner": "code-423n4",
-  "repo": "marginswap",
+  "repo": "marginswap-results",
   "labelAll": "bug",
   "fields": [
     {

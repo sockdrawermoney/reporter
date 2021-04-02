@@ -5,6 +5,9 @@ import history from "../utils/history";
 import createIssue from "../functions/createIssue";
 import { Widgets } from "./widgets";
 
+const contest = process.env.CONTEST;
+const sponsor = process.env.SPONSOR;
+
 const Form = () => {
   const [state, setState] = useState({
     status: "unsubmitted",
@@ -37,8 +40,8 @@ const Form = () => {
   ];
 
   const formData = {
-    contest: config.contest,
-    sponsor: config.sponsor,
+    contest,
+    sponsor,
     email: state.email,
     handle: state.handle,
     risk: state.risk,

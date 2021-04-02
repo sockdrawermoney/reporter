@@ -10,7 +10,7 @@
   publish = "build/"
 
   # Directory with the serverless Lambda functions to deploy to AWS.
-  functions = "src/_functions/"
+  functions = "functions/"
 
 # The following redirect is intended for use with most SPAs that handle
 # routing internally.

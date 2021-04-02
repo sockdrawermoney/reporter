@@ -35,7 +35,7 @@ exports.handler = async (event) => {
     };
   }
 
-  const recipients = `${email}, submissions@code423n4.com, adamavenir@hey.com`;
+  const recipients = `${email}, submissions@code423n4.com`;
   const text = dedent`
   C4 finding submitted:
   

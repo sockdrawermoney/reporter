@@ -93,6 +93,15 @@ input .form-unsubmitted form {
   display: block;
 }
 
+.form-unsubmitted .submit-another {
+  display: none;
+}
+
+.form-submitting input,
+.form-submitting label,
+.form-submitting button,
+.form-submitting textarea,
+.form-submitting .helptext,
 .form-submitted input,
 .form-submitted label,
 .form-submitted button,
@@ -101,15 +110,29 @@ input .form-unsubmitted form {
   display: none;
 }
 
+.form-submitting form {
+  background-color: yellow;
+}
+
+.form-submitting form::after {
+  content: "Submitting form...";
+  text-align: center;
+  display: block;
+  font-weight: bold;
+}
+
 .form-submitted form {
   background-color: green;
 }
 
 .form-submitted form::after {
-  content: "You did it";
+  content: "Form submitted successfully. You should have an email confirmation.";
   text-align: center;
   display: block;
   font-weight: bold;
+}
+.form-submitted .submit-another {
+  display: block;
 }
 
 .form-error form {

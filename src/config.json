@@ -64,7 +64,7 @@
       "required": true
     },
     {
-      "name": "proof-of-concept",
+      "name": "proofOfConcept",
       "label": "Proof of concept",
       "helptext": "Screenshots, logs, or any other relevant proof illustrating the concept of the bug/vulnerability.",
       "widget": "textarea",

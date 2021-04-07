@@ -7,18 +7,26 @@ import { Widgets } from "./widgets";
 const contest = process.env.REACT_APP_C4_CONTEST;
 const sponsor = process.env.REACT_APP_C4_SPONSOR;
 
+const initialState = {
+  status: "unsubmitted",
+  title: "",
+  email: "",
+  handle: "",
+  address: "",
+  details:
+    "## Impact\n\nProvide a detailed description of the impact this bug/vulnerability has on the overall system under test.\n\n## Proof of Concept\n\nProvide screenshots, logs, or any other relevant proof that illustrates the concept of the bug/vulnerability you have identified.\n\n## Tools Used\n\nDescribe the tools used throughout your testing and analysis process.\n\n## Recommended Mitigation Steps\n\nDescribe the recommended steps that a project should use to mitigate the bugs or vulnerabilities you have identified.",
+};
+
 const Form = () => {
-  const [state, setState] = useState({
-    status: "unsubmitted",
-  });
+  const [state, setState] = useState(initialState);
 
   const fields = config.fields;
 
   const handleChange = (e) => {
-    const { target } = e;
+    const { name, value } = e.target;
     setState({
       ...state,
-      [target.name]: target.value,
+      [name]: value,
     });
   };
 
@@ -52,7 +60,18 @@ const Form = () => {
   };
 
   // body contains everything in state except title, label, and status
-  const bodyFields = omit(state, "title", "status", "label");
+
+  // TODO filter out email, eth address, and possibly handle
+  // TODO add eth address to data blob
+  const bodyFields = omit(
+    state,
+    "title",
+    "status",
+    "label",
+    "email",
+    "address"
+  );
+  // const bodyFields = omit(state, "title", "status", "label");
 
   let markdownBody = [];
 
@@ -75,6 +94,7 @@ const Form = () => {
   const formData = {
     email: state.email,
     handle: state.handle,
+    address: state.address,
     risk,
     title: state.title,
     body: markdownBody.join("\n"),
@@ -88,6 +108,10 @@ const Form = () => {
   const handleReset = () => {
     history.push("/");
     setState({
+      ...state,
+      title: "",
+      details:
+        "## Impact\n\nProvide a detailed description of the impact this bug/vulnerability has on the overall system under test.\n\n## Proof of Concept\n\nProvide screenshots, logs, or any other relevant proof that illustrates the concept of the bug/vulnerability you have identified.\n\n## Tools Used\n\nDescribe the tools used throughout your testing and analysis process.\n\n## Recommended Mitigation Steps\n\nDescribe the recommended steps that a project should use to mitigate the bugs or vulnerabilities you have identified.",
       status: "unsubmitted",
     });
   };
@@ -100,7 +124,7 @@ const Form = () => {
       <h1>{sponsor} contest finding</h1>
       <form>
         <input type="hidden" id="contest" name="contest" value={contest} />
-        <Widgets fields={fields} onChange={handleChange} />
+        <Widgets fields={fields} onChange={handleChange} fieldState={state} />
         <button type="button" onClick={handleSubmit}>
           Create issue
         </button>

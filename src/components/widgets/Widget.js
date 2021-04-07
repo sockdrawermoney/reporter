@@ -2,8 +2,8 @@ import React from "react";
 import { TextField, TextArea, SelectField } from "./";
 
 const Widget = (props) => {
-  const { field } = props;
-  const { widget, name, label, value, helptext, required, options } = field;
+  const { field, fieldState } = props;
+  const { widget, name, label, helptext, required, options } = field;
 
   function handleChange(e) {
     props.onChange(e);
@@ -13,10 +13,10 @@ const Widget = (props) => {
     <TextField
       name={name}
       label={label}
-      value={value}
       helptext={helptext}
       required={required}
       onChange={handleChange}
+      fieldState={fieldState[name]}
     />
   );
 
@@ -24,10 +24,10 @@ const Widget = (props) => {
     <TextArea
       name={name}
       label={label}
-      value={value}
       helptext={helptext}
       required={required}
       onChange={handleChange}
+      fieldState={fieldState[name]}
     />
   );
 
@@ -35,11 +35,11 @@ const Widget = (props) => {
     <SelectField
       name={name}
       label={label}
-      value={value}
       helptext={helptext}
       required={required}
       onChange={handleChange}
       options={options}
+      fieldState={fieldState[name]}
     />
   );
 

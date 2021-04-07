@@ -55,34 +55,6 @@
       "helptext": "Detailed description of this particular bug/vulnerability.",
       "widget": "textarea",
       "required": true
-    },
-    {
-      "name": "impact",
-      "label": "Impact",
-      "helptext": "Detailed description of the impact this bug/vulnerability has on the overall system under test.",
-      "widget": "textarea",
-      "required": true
-    },
-    {
-      "name": "proofOfConcept",
-      "label": "Proof of concept",
-      "helptext": "Screenshots, logs, or any other relevant proof illustrating the concept of the bug/vulnerability.",
-      "widget": "textarea",
-      "required": true
-    },
-    {
-      "name": "tools",
-      "label": "Tools used",
-      "helptext": "Tools used throughout your testing and analysis process.",
-      "widget": "textarea",
-      "required": true
-    },
-    {
-      "name": "mitigation",
-      "label": "Recommended mitigation steps",
-      "helptext": "Recommended steps that a project should use to mitigate the bug/vulnerability.",
-      "widget": "textarea",
-      "required": true
     }
   ]
 }

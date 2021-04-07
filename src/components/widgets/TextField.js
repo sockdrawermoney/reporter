@@ -1,7 +1,7 @@
 import React from "react";
 
 const TextField = (props) => {
-  const { name, label, value, helptext, required } = props;
+  const { name, label, helptext, required, fieldState } = props;
   function handleChange(e) {
     props.onChange(e);
   }
@@ -13,8 +13,8 @@ const TextField = (props) => {
         name={name}
         type="text"
         onChange={handleChange}
-        value={value}
         required={required}
+        value={fieldState}
       />
     </div>
   );

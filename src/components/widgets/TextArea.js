@@ -1,7 +1,8 @@
 import React from "react";
 
 const TextArea = (props) => {
-  const { name, label, value, helptext, required } = props;
+  const { name, label, helptext, required, fieldState } = props;
+
   function handleChange(e) {
     props.onChange(e);
   }
@@ -11,9 +12,9 @@ const TextArea = (props) => {
       <p className="helptext">{helptext}</p>
       <textarea
         name={name}
-        value={value}
         onChange={handleChange}
         required={required}
+        value={fieldState}
       />
     </div>
   );

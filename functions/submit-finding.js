@@ -25,13 +25,14 @@ exports.handler = async (event) => {
   }
 
   const data = JSON.parse(event.body);
-  const { email, handle, risk, title, body, labels } = data;
+  const { email, address, handle, risk, title, body, labels } = data;
 
   // ensure we have the data we need
-  if (!email || !handle || !risk || !title || !body || !labels) {
+  if (!email || !handle || !address || !risk || !title || !body || !labels) {
     return {
       statusCode: 422,
-      body: "Email, handle, risk, title, body, and labels are required.",
+      body:
+        "Email, handle, address, risk, title, body, and labels are required.",
     };
   }
 
@@ -69,6 +70,7 @@ exports.handler = async (event) => {
   const fileData = {
     contest,
     handle,
+    address,
     risk,
     title,
     issueId,

@@ -36,6 +36,14 @@
       "required": true,
       "options": [
         {
+          "label": "0 - Gas Optimization",
+          "value": "G (Gas Optimization)"
+        },
+        {
+          "label": "0 — Non-critical",
+          "value": "0 (Non-critical)"
+        },
+        {
           "label": "1 — Low Risk",
           "value": "1 (Low Risk)"
         },

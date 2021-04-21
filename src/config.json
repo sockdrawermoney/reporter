@@ -36,7 +36,7 @@
       "required": true,
       "options": [
         {
-          "label": "0 - Gas Optimization",
+          "label": "0 — Gas Optimization",
           "value": "G (Gas Optimization)"
         },
         {

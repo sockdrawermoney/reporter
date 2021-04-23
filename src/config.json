@@ -60,7 +60,7 @@
     {
       "name": "details",
       "label": "Vulnerability details",
-      "helptext": "Detailed description of this particular bug/vulnerability.",
+      "helptext": "Link to all referenced sections of code in GitHub",
       "widget": "textarea",
       "required": true
     }

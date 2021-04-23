@@ -7,14 +7,16 @@ import { Widgets } from "./widgets";
 const contest = process.env.REACT_APP_C4_CONTEST;
 const sponsor = process.env.REACT_APP_C4_SPONSOR;
 
+const mdTemplate =
+  "## Impact\nDetailed description of the impact of this finding.\n\n## Proof of Concept\nProvide direct links to all referenced code in GitHub. Add screenshots, logs, or any other relevant proof that illustrates the concept.\n\n## Tools Used\n\n## Recommended Mitigation Steps";
+
 const initialState = {
   status: "unsubmitted",
   title: "",
   email: "",
   handle: "",
   address: "",
-  details:
-    "## Impact\n\nProvide a detailed description of the impact this bug/vulnerability has on the overall system under test.\n\n## Proof of Concept\n\nProvide screenshots, logs, or any other relevant proof that illustrates the concept of the bug/vulnerability you have identified.\n\n## Tools Used\n\nDescribe the tools used throughout your testing and analysis process.\n\n## Recommended Mitigation Steps\n\nDescribe the recommended steps that a project should use to mitigate the bugs or vulnerabilities you have identified.",
+  details: mdTemplate,
 };
 
 const Form = () => {
@@ -110,8 +112,7 @@ const Form = () => {
     setState({
       ...state,
       title: "",
-      details:
-        "## Impact\n\nProvide a detailed description of the impact this bug/vulnerability has on the overall system under test.\n\n## Proof of Concept\n\nProvide screenshots, logs, or any other relevant proof that illustrates the concept of the bug/vulnerability you have identified.\n\n## Tools Used\n\nDescribe the tools used throughout your testing and analysis process.\n\n## Recommended Mitigation Steps\n\nDescribe the recommended steps that a project should use to mitigate the bugs or vulnerabilities you have identified.",
+      details: mdTemplate,
       status: "unsubmitted",
     });
   };

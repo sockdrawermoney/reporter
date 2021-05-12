@@ -1,0 +1,9 @@
+{
+  "contest": "Sample Contest",
+  "handle": "0xRajeev",
+  "address": "1234567890",
+  "risk": "G",
+  "title": "sample title",
+  "issueId": 54,
+  "issueUrl": "https://github.com/code-423n4/reporter/issues/54"
+}
